@@ -9,7 +9,6 @@ import {useRoute} from '@react-navigation/native';
 const Topic = () => {
   const {params} = useRoute<any>();
   const item = params?.data;
-  console.log('data', item);
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar animated={true} backgroundColor={redWhite} />

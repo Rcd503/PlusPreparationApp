@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {
   FlatList,
   SafeAreaView,
@@ -8,8 +8,6 @@ import {
 import QuestionCard from '../../../../components/molecules/questionCard';
 import {redWhite} from '../../../../themes/colors';
 import styles from './style';
-import {useRoute} from '@react-navigation/native';
-import ScoreModal from '../../../../components/atoms/scoreModal';
 import {Text} from 'react-native-paper';
 import {
   useAppDispatch,

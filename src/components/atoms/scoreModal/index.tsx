@@ -6,7 +6,6 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 const ScoreModal = (props: any) => {
   const {modalVisible, setModalVisible, totalRightAnswer, totalQuestions} =
     props;
-  console.log('totalRightAnswer', totalRightAnswer);
   return (
     <View style={styles.centeredView}>
       <Modal

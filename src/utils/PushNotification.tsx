@@ -8,31 +8,23 @@ export async function requestUserPermission() {
     authStatus === messaging.AuthorizationStatus.PROVISIONAL;
 
   if (enabled) {
-    console.log('Authorization status:', authStatus);
     getFcmToken();
   }
 }
 const getFcmToken = async () => {
   let fcmToken = await AsyncStorage.getItem('fcmtoken');
-  console.log('OLD TOKEN::', fcmToken);
   if (!fcmToken) {
     try {
       const fcmToken = await messaging()?.getToken();
       if (fcmToken) {
-        console.log('NET FCM TOKEN:', fcmToken);
         await AsyncStorage.setItem('fcmtoken', fcmToken);
       }
     } catch (error) {
-      console.log('fcmtoken error', error);
     }
   }
 };
 export const notificationServices = () => {
   messaging().onNotificationOpenedApp(remoteMessage => {
-    console.log(
-      'Notification caused app to open from background state:',
-      remoteMessage.notification,
-    );
     // navigation.navigate(remoteMessage.data.type);
   });
 
@@ -41,10 +33,6 @@ export const notificationServices = () => {
     .getInitialNotification()
     .then(remoteMessage => {
       if (remoteMessage) {
-        console.log(
-          'Notification caused app to open from quit state:',
-          remoteMessage.notification,
-        );
         // setInitialRoute(remoteMessage.data.type); // e.g. "Settings"
       }
       //   setLoading(false);

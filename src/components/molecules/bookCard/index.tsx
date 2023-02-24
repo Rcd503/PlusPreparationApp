@@ -5,7 +5,6 @@ import {boook_image} from '../../../constants';
 import {useNavigation} from '@react-navigation/native';
 
 const BookCard = (props: any) => {
-  console.log('Bookcard');
 
   const navigation = useNavigation<any>();
   const {item} = props;

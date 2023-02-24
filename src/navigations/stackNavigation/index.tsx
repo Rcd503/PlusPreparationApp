@@ -7,6 +7,7 @@ import Topic from '../../screens/bottonTabScreens/bookScreens/topic';
 import Question from '../../screens/bottonTabScreens/bookScreens/question';
 import {whiteRed} from '../../themes/colors';
 import FavoriteQuestions from '../../screens/bottonTabScreens/homeScreen/favoriteQuestions';
+import MakeYourQuestion from '../../screens/bottonTabScreens/homeScreen/makeYourQuestion';
 const Stack = createStackNavigator();
 const StackNavigation = () => (
   <Stack.Navigator
@@ -37,6 +38,7 @@ const StackNavigation = () => (
     <Stack.Screen name="User" component={User} />
     <Stack.Screen name="AboutUs" component={AboutUs} />
     <Stack.Screen name="Favorite Questions" component={FavoriteQuestions} />
+    <Stack.Screen name="Make Your Question" component={MakeYourQuestion} />
   </Stack.Navigator>
 );
 

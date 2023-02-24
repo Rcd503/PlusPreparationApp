@@ -19,7 +19,6 @@ const Question = () => {
   const [totalRightAnswer, setTotalRightAnswer] = useState<number>(0);
   const submitAnswer = () => {
     setModalVisible(true);
-    console.log('ANSWERARRAY', totalRightAnswer);
   };
   return (
     <SafeAreaView style={styles.container}>

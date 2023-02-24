@@ -13,7 +13,6 @@ export const favoriteQuestionSlice = createSlice({
   initialState,
   reducers: {
     addToFavoriteQuestionList: (state, {payload}) => {
-      console.log('FAVLIST::', state.favoriteQuestions);
       // Redux Toolkit allows us to write "mutating" logic in reducers. It
       // doesn't actually mutate the state because it uses the Immer library,
       // which detects changes to a "draft state" and produces a brand new
@@ -21,14 +20,12 @@ export const favoriteQuestionSlice = createSlice({
       state.favoriteQuestions = [...state.favoriteQuestions, payload];
     },
     removeFromFavoriteQuestionList: (state, {payload}) => {
-      console.log('FAVLIST::', state.favoriteQuestions);
       state.favoriteQuestions = state.favoriteQuestions?.filter(
         item => item?.question !== payload?.question,
       );
     },
     unfavoriteAllQuestions: state => {
       state.favoriteQuestions = [];
-      console.log('FAVLIST::', state.favoriteQuestions);
     },
   },
 });

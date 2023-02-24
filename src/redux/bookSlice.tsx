@@ -1,6 +1,5 @@
 import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
-import type {PayloadAction} from '@reduxjs/toolkit';
-
+import {BASE_API} from '../../config'
 export interface CounterState {
   books: (string | number | '')[];
   status?: STATUSES;
@@ -53,14 +52,8 @@ export const {setBooksData, setStatus} = bookSlice.actions;
 export default bookSlice.reducer;
 
 export const fetchBooks = createAsyncThunk('book/fetch', async () => {
-  console.log('fetch boo1111');
-  const res = await fetch(
-    'https://sracademy-94ac7-default-rtdb.asia-southeast1.firebasedatabase.app//DATA.json',
-  );
-  console.log('RES::::', res);
+  const res = await fetch(BASE_API);
   const data = await res.json();
-  console.log('DATA::::', data);
-  console.log('fetch book2222');
 
   return data;
 });

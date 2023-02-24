@@ -160,7 +160,6 @@ const QuestionCard = (props: any) => {
         const find = answerArray?.find(
           (v: any) => v?.question_number === item?.question_number,
         );
-        console.log('FIND', find);
         //find return undefined if number not existing
         if (find)
           setAnswerArray([
@@ -186,16 +185,13 @@ const QuestionCard = (props: any) => {
   const setToFavoriteList = () => {
     setShowFavorite(!showFavorite);
     dispatch(addToFavoriteQuestionList(item));
-    console.log('item:', item);
   };
   const removeToFavoriteList = () => {
     setShowFavorite(!showFavorite);
     dispatch(removeFromFavoriteQuestionList(item));
-    console.log('item:', item);
   };
   const {favoriteQuestions} = useAppSelector(state => state.favorite);
   useEffect(() => {
-    console.log('favoriteQuestions::', favoriteQuestions);
     if (favoriteQuestions?.find(data => data?.question === item?.question)) {
       setShowFavorite(false);
     }

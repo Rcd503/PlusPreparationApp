@@ -18,9 +18,10 @@ const Books = () => {
   const dispatch = useAppDispatch();
   const {books: BOOKDATA, status} = useAppSelector(state => state.book);
   useEffect(() => {
-    if (netInfo.isConnected) dispatch(fetchBooks());
-  }, []);
+    if (netInfo?.isConnected) dispatch(fetchBooks());
+  }, [netInfo?.isConnected]);
 
+  
   if (status === STATUSES.LOADING) {
     return (
       <SafeAreaView style={styles.container}>
@@ -28,7 +29,6 @@ const Books = () => {
       </SafeAreaView>
     );
   }
-  console.log('BOOKDATA::', BOOKDATA);
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar animated={true} backgroundColor={redWhite} />
